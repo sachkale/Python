@@ -1,6 +1,6 @@
 node {
   stage('SCM') {
-    checkout scm
+    git branch: 'main', credentialsId: 'sachkale', url: 'https://github.com/sachkale/Python.git'
   }
   stage('SonarQube Analysis') {
     def scannerHome = tool 'SonarScanner';
