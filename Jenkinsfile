@@ -1,9 +1,11 @@
 pipeline {
   agent any
   
-  environment {
-       env.PATH = env.PATH + ";c:\\Windows\\System32"
-   }
+ environment {
+
+    PATH = "C:\\WINDOWS\\SYSTEM32"
+
+}
  
    stages {
       stage('Hello') {
