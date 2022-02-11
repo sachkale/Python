@@ -10,7 +10,7 @@ pipeline {
       stage('Hello') {
           steps {
               echo "Hello World!"
-            bat 'echo %PATH%'
+            bat 'dr'
           }
       }
      
