@@ -1,11 +1,9 @@
 pipeline {
   agent any
   
-  
   tools {
         maven 'mvn-11'
-        jdk 'jdk-11'
-    
+        jdk 'jdk-11' 
   }
   
    stages {
@@ -19,14 +17,11 @@ pipeline {
      stage('Code Checkout') {
           steps {
             checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'GITHUB_credentials', url: 'https://github.com/sachkale/Python.git']]])
-   
           }
-    }
+      }
      
-     
-     stages {
-        stage ('Initialize') {
-            steps {
+      stage ('Initialize') {
+        steps {
                 sh '''
                     echo "PATH = ${PATH}"
                     echo "M2_HOME = ${M2_HOME}"
