@@ -1,12 +1,6 @@
 pipeline {
-  agent any
+  agent none
   
- environment {
-
-    PATH = "C:\\WINDOWS\\SYSTEM32"
-
-}
- 
    stages {
       stage('Hello') {
           steps {
@@ -18,8 +12,7 @@ pipeline {
      stage('Code Checkout') {
           steps {
             checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'GITHUB_credentials', url: 'https://github.com/sachkale/Python.git']]])
-            bat 'dr'
-            
+          
           }
        
       }
