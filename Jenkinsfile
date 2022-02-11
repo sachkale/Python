@@ -10,6 +10,7 @@ pipeline {
       stage('Hello') {
           steps {
               echo "Hello World!"
+            bat 'echo %PATH%'
           }
       }
      
@@ -20,20 +21,7 @@ pipeline {
           }
       }
      
-      stage ('Initialize') {
-        steps {
-                
-                    echo "PATH = ${PATH}"
-                    echo "M2_HOME = ${M2_HOME}"
-               
-            }
-        }
-
-        stage ('Build') {
-            steps {
-                mvn clean install
-            }
-      }
+    
        
    }
    }
