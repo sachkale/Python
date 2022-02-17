@@ -3,7 +3,9 @@ pipeline {
   
   tools {
         maven 'mvn-11'
-        jdk 'jdk-11' 
+        jdk 'jdk-11'
+        java -version
+        sonar-scanner -v
   }
   
    stages {
@@ -20,7 +22,11 @@ pipeline {
           }
       }
      
-    
+     stage('CodeQuality') {
+          steps {
+              echo "Hello World!"
+          }
+      }
        
    }
-   }
+}
