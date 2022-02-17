@@ -4,7 +4,7 @@ pipeline {
   tools {
         maven 'mvn-11'
         jdk 'jdk-11'
-    sh 'java -version'
+   bat 'java -version'
   }
   
    stages {
