@@ -5,7 +5,6 @@ pipeline {
         maven 'mvn-11'
         jdk 'jdk-11'
         java -version
-        sonar-scanner -v
   }
   
    stages {
